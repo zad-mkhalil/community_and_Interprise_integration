@@ -1,0 +1,25 @@
+<odoo>
+    <data>
+        <!-- Inherit the existing hr.leave form view -->
+        <record id="hr_leave_form_inherit_integration" model="ir.ui.view">
+            <field name="name">hr.leave.form.integration</field>
+            <field name="model">hr.leave</field>
+            <field name="inherit_id" ref="hr_holidays.hr_leave_view_form"/>
+            <field name="arch" type="xml">
+                <!-- Add the new fields to the form view inside the sheet -->
+                <sheet position="inside">
+                    <group>
+                        <group string="Integration Information">
+                            <field name="x_external_reference" />
+                            <field name="url"/>
+                            <field name="db"/>
+                            <field name="username"/>
+                            <field name="password"/>
+
+                        </group>
+                    </group>
+                </sheet>
+            </field>
+        </record>
+    </data>
+</odoo>
